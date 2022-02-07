@@ -1,8 +1,5 @@
 <?php
     session_start();
-
-    $_SESSION["type"] = "Fiction";
-
-    header("Location: ./PHP/HomePage.php");
+    header("Location: ./PHP/HomePage.php?type=ALL");
     exit();
 ?>
