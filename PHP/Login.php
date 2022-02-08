@@ -26,10 +26,20 @@
             </div>
             <div class="tab-content" id="myTabContent">
                 <div class="FormDiv FormBody tab-pane fade" role="tabpanel" id="SignUp" aria-labelledby="SignUp-tab">
-                    <form class="form" action="./Form.html" method="GET" id='sform'>
+                    <form class="form" action="./_SignUP.php" method="POST" id='sform'>
+                        <?Php
+                            if(isset($_GET['serror'])) {
+                                echo "<div class='form__item'>";
+                                echo "<span class='form__message'>";
+                                if($_GET['serror'] == 1) {
+                                    echo "User already exists";
+                                }
+                                echo "</span></div>";
+                            }
+                        ?>
                         <div class="form__item">
                             <label for="name" class="form__label">Enter your full name</label>
-                            <input type="text" class="form__input " name="uname" id="fname" placeholder="FirstName LastName" required>
+                            <input type="text" class="form__input " name="fname" id="fname" placeholder="FirstName LastName" required>
                             <span class="form__error">Enter a valid name</span>
                         </div>
                         <div class="form__item">
@@ -73,7 +83,20 @@
                     </form>
                 </div>
                 <div class="FormDiv FormBody tab-pane fade show active" role="tabpanel" id="Login" aria-labelledby="Login-tab">
-                    <form class="form" action="./Form.html" method="GET" id='lform'>
+                    <form class="form" action="./_Login.php" method="POST" id='lform'>
+                        <?Php
+                            if(isset($_GET['lerror'])) {
+                                echo "<div class='form__item'>";
+                                echo "<span class='form__message'>";
+                                if($_GET['lerror'] == 1) {
+                                    echo "User does not exist";
+                                }
+                                else if($_GET['lerror'] == 2) {
+                                    echo "Password is incorrect";
+                                }
+                                echo "</span></div>";
+                            }
+                        ?>
                         <div class="form__item">
                             <label for="name" class="form__label">Enter your username</label>
                             <input type="text" class="form__input" name="luname" id="luname" placeholder="user_123" required>
@@ -85,7 +108,7 @@
                             <span class="form__error">Enter a valid password</span>
                         </div>
                         <div class="form__item">
-                            <button class="form__btn" type="submit">Login</button>
+                            <button class="form__btn" type="submit" id="login">Login</button>
                         </div>
                     </form>
                 </div>

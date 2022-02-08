@@ -1,19 +1,7 @@
-<?php 
-    header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-    header("Cache-Control: post-check=0, pre-check=0", false);
-    header("Pragma: no-cache");
+<?php
     session_start();
 
-    $mysql_username = 'admin';
-    $mysql_servername = 'localhost';
-    $password = "1134@aaAA";
-    $dbname = 'PHP_Project';
-    
-    $conn = mysqli_connect($mysql_servername, $mysql_username, $password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    require "./database.php";
 
     if(isset($_GET['type'])) {
         if($_GET['type'] == 'ALL') {
@@ -32,6 +20,15 @@
         }
     }
     $result = $conn->query($sql);
+
+    if(isset($_SESSION['userid'])) {
+        $sql = "SELECT * FROM `user table` WHERE UserID='". $_SESSION['userid'] ."'";
+        $usr_result = $conn->query($sql);
+
+        while($row = $usr_result->fetch_assoc()) {
+            $usr_name = $row['Username'];
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -56,10 +53,10 @@
                 <form class="form-dark" method="GET" action="./HomePage.php">
                     <input type="text" placeholder="Search" class="form-control dark font_style" id="search" name="search">
                 </form>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Books" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse justify-content-end" id="Books">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle font_style" href="#" role="button" data-bs-toggle="dropdown">Book Type</a>
@@ -72,13 +69,34 @@
                         </li>
                     </ul>
                 </div>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <?Php if(!isset($_SESSION['userid'])) {?>
+                <div class="collapse navbar-collapse justify-content-end" id="LINKS">
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link font_style nav-link" aria-current="page" href="../PHP/Login.php">Login / Sign Up</a>
                         </li>
                     </ul>
                 </div>
+                <?Php 
+                    }
+                    else {
+                ?>
+                <div class="collapse navbar-collapse justify-content-end" id="USER">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle font_style" href="#" role="button" data-bs-toggle="dropdown">
+                                <?Php echo $usr_name?>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item nav-link font_style" href="./Logout.php">Logout</a></li>
+                                <li><a class="dropdown-item nav-link font_style" href="">Cart</a></li>
+                                <li><a class="dropdown-item nav-link font_style" href="">Orders</a></li>
+                                <li><a class="dropdown-item nav-link font_style" href="">Profile</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <?Php } ?>
             </div>
         </nav>
 

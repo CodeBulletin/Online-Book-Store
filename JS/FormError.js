@@ -6,6 +6,10 @@ const usr_pass = document.getElementById('pass');
 const usr_rpass = document.getElementById('repass');
 const sform = document.getElementById('sform');
 
+const usr_login_name = document.getElementById('luname');
+const usr_login_pass = document.getElementById('lpass');
+const lform = document.getElementById('lform');
+
 function validateName(name) {
     var nameRegex = /^[a-zA-Z\.\s]+$/;
     return nameRegex.test(name) && /^[a-zA-Z]/.test(name);
@@ -132,10 +136,6 @@ usr_rpass.addEventListener('input', (event) => {
     }
 })
 
-usr_agree.addEventListener('input', (event) => {
-    usr_agree.classList.remove('form__input--error');
-})
-
 sform.addEventListener('submit', (event) => {
     var name = usr_name.value;
     var uname = usr_uname.value;
@@ -145,6 +145,48 @@ sform.addEventListener('submit', (event) => {
     var rpass = usr_rpass.value;
     var a = validateName(name) && validatePhone(phone) && validateUserName(uname) &&
         validateEmail(email) && validatePassword(pass, rpass);
+
+    if (a == false) {
+        event.preventDefault();
+    }
+})
+
+usr_login_name.addEventListener('input', (event) => {
+    var str = usr_login_name.value;
+    var value = validateUserName(str); 
+    if (str.length > 0) {
+        if (value == true) {
+            usr_login_name.classList.remove('form__input--error');
+        }
+        else {
+            usr_login_name.classList.add('form__input--error');
+        }
+    } 
+    else {
+        usr_login_name.classList.remove('form__input--error');
+    }
+})
+
+usr_login_pass.addEventListener('input', (event) => {
+    var str = usr_login_pass.value;
+    var value = validatePassword(str, null); 
+    if (str.length > 0) {
+        if (value == true) {
+            usr_login_pass.classList.remove('form__input--error');
+        }
+        else {
+            usr_login_pass.classList.add('form__input--error');
+        }
+    } 
+    else {
+        usr_login_pass.classList.remove('form__input--error');
+    }
+})
+
+lform.addEventListener('submit', (event) => {
+    var name = usr_login_name.value;
+    var pass = usr_login_pass.value;
+    var a = validateUserName(name) && validatePassword(pass, null);
 
     if (a == false) {
         event.preventDefault();
