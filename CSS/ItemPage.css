@@ -1,0 +1,130 @@
+@import "UI.css";
+@import "NavBar.css";
+
+.FullScreen {
+    padding: 25px;
+}
+
+.ItemGrid {
+    width: 100%;
+    min-width: 300px;
+
+    background-color: #212532;
+    border-top: 2px solid #0D9737;
+    border-right: 2px solid #0D9737;
+    border-left: 2px solid #0D9737;
+    border-bottom: 2px solid #0D9737;
+    padding: 20px;
+
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-auto-rows: auto;
+
+    grid-column-gap: 50px;
+    grid-row-gap: 10px;
+}
+
+.Head {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    text-align: center;
+}
+
+.Desc {
+    padding: 20px;
+    background-color: #FFFFFF10;
+}
+
+.IMAGE {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: auto;
+}
+
+.Major {
+    font-size: 2.5em
+}
+
+.Price {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.button {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 10px 16px;
+    margin: 10px auto;
+    color: #ffffff;
+    background: #14b64a;
+    border: 2px solid #0fa942;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.button:active {
+    background: #0fa942;
+}
+
+.price {
+    text-align: center;
+}
+
+@media only screen and (max-width: 975px) {
+    .Head {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    
+        text-align: center;
+    }
+
+    .IMAGE {
+        width: 100%;
+        min-width: 250px;
+        max-width: 300px;
+        height: auto;
+        margin: auto;
+    }
+
+    .Img {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        margin: auto;
+    }
+
+    .Price {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+    
+    .Desc {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 4;
+        grid-row-end: 5;
+        padding: 20px;
+        background-color: #FFFFFF10;
+    }
+
+    .Major {
+        font-size: 1.5em
+    }
+
+    .Minor {
+        font-size: 0.9em;
+    }
+}

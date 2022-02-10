@@ -9,7 +9,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
       
       <script defer src="../Libraries/js/bootstrap.min.js"></script>
-      <script defer src="../JS/FormError.js"></script>
+      <script defer src="../JS/FormLogin.js"></script>
       <title>Book Mania Login/Sign Up</title>
    </head>
    <body>

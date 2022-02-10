@@ -1,0 +1,9 @@
+.dark {
+    background-color: #202020;
+    color: #D0D0D0;
+}
+
+.dark:focus {
+    background-color: #404040;
+    color: #D0D0D0;
+}

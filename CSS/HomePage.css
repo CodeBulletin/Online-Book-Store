@@ -1,30 +1,5 @@
-body {
-    background: #121212;
-}
-
-.Link {
-    transition: 0.25s;
-}
-
-.Link:link {
-    color: #E0E0E0;
-    text-decoration: none;
-}
-
-.Link:visited {
-    color: #D0D0D0;
-    text-decoration: none;
-}
-
-.Link:hover {
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
-.Link:active {
-    color: #D0D0FF;
-    text-decoration: none;
-}
+@import "UI.css";
+@import "NavBar.css";
 
 .Item {
     display: flex;
@@ -64,18 +39,4 @@ body {
 
 .Item__List {
     padding: 25px;
-}
-
-.dark {
-    background-color: #202020;
-    color: #D0D0D0;
-}
-
-.dark:focus {
-    background-color: #404040;
-    color: #D0D0D0;
-}
-
-.font_style {
-    font-family: 'Roboto', sans-serif;
 }

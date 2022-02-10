@@ -1,0 +1,36 @@
+body {
+    background: #121212 !important;
+}
+
+.Link:link {
+    color: #E0E0E0 !important;
+    text-decoration: none !important;
+}
+
+.Link:visited {
+    color: #D0D0D0 !important;
+    text-decoration: none !important;
+}
+
+.Link:hover {
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+}
+
+.Link:active {
+    color: #D0D0FF !important;
+    text-decoration: none !important;
+}
+
+.Link {
+    color: #E0E0E0 !important;
+    transition: 0.25s !important;
+}
+
+.font_style {
+    font-family: 'Roboto', sans-serif;
+}
+
+.dark_col {
+    color: #F0F0F0;
+}
