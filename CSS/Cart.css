@@ -23,3 +23,130 @@
     grid-column-gap: 50px;
     grid-row-gap: 10px;
 }
+
+.items {
+    padding: 10px;
+}
+
+.item {
+    width: 100%;
+    min-width: 300px;
+
+    background-color: #FFFFFF10;
+    padding: 5px;
+
+    display: grid;
+    grid-template-columns: 1fr 6.5fr;
+    grid-auto-rows: auto;
+
+    grid-column-gap: 50px;
+    grid-row-gap: 10px;
+
+    margin: 5px;
+
+    transition: 0.25s;
+}
+
+.item:hover {
+    padding: 10px;
+}
+
+.Image {
+    text-align: center;
+}
+
+.img {
+    width: 100%;
+    max-width: 130px;
+    height: auto;
+}
+
+.total {
+    text-align: center;
+}
+
+.button {
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 10px 16px;
+    margin: 10px auto;
+    color: #ffffff;
+    background: #14b64a;
+    border: 2px solid #0fa942;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.button:active {
+    background: #0fa942;
+}
+
+.empty {
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+@media only screen and (max-width: 975px) {
+    .CartGrid {
+        min-width: 150px;
+        padding: 5px;
+        grid-column-gap: 10px;
+        grid-row-gap: 5px;
+    }
+
+    .items {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        padding: 5px;
+    }
+
+    .item {
+        width: 100%;
+        min-width: 150px;
+    
+        background-color: #FFFFFF10;
+        padding: 5px;
+    
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: auto;
+    
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        
+        margin: auto;
+        margin-bottom: 5px;
+    
+        transition: 0.25s;
+    }
+
+    .Image {
+        text-align: center;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .total {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        text-align: center;
+    }
+
+    .Name {
+        text-align: center;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+}
