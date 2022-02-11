@@ -6,6 +6,6 @@
 
     $conn->query($sql);
 
-    header("Location: ../Main/HomePage.php?type=ALL");
+    header("Location: ../Main/Cart.php?type=ALL");
     exit();
 ?>

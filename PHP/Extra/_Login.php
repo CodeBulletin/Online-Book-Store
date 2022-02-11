@@ -9,7 +9,7 @@
     $sql = "SELECT * FROM `user table` where Username='" .$user_name . "'";
     $result = $conn->query($sql);
     if ($result->num_rows == 0) {
-        header("Location: .../Main/Login.php?lerror=1");
+        header("Location: ../Main/Login.php?lerror=1");
         exit();
     }
 
