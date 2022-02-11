@@ -1,6 +1,6 @@
 <?php 
-    $cart_text = "Cart";
     if(isset($_SESSION['userid'])) {
+        $cart_text = "Cart";
         $sql = "SELECT * FROM `user table` WHERE UserID='". $_SESSION['userid'] ."'";
         $usr_result = $conn->query($sql);
         $row = $usr_result->fetch_assoc();
@@ -11,7 +11,11 @@
         $res = $conn->query($sql);
         $row = $res->fetch_assoc();
 
-        $cart_text = "Cart | ". $row['num_items'] . " | ₹" . $row['total'];
+        $sql = "SELECT * FROM `cart table` WHERE `UserID`=" . $_SESSION['userid'];
+        $res = $conn->query($sql);
+        if($res->num_rows > 0) { 
+            $cart_text = "Cart | ". $row['num_items'] . " | ₹" . $row['total'];
+        }
     }
 ?>
 
