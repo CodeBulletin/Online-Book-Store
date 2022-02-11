@@ -13,7 +13,7 @@
     $sql = "SELECT * FROM `user table` where Username='" .$username . "'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
-        header("Location: ./Login.php?serror=1");
+        header("Location: ../Main/Login.php?serror=1");
         exit();
     }
 
@@ -27,6 +27,6 @@
         $_SESSION['userid'] = $row['UserID'];
     }
 
-    header("Location: ./HomePage.php?type=ALL");
+    header("Location: ../Main/HomePage.php?type=ALL");
     exit();
 ?>

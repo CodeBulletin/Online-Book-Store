@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="../Libraries/css/bootstrap.min.css" />
-      <link rel="stylesheet" href="../CSS/Login.css?">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-      
-      <script defer src="../Libraries/js/bootstrap.min.js"></script>
-      <script defer src="../JS/FormLogin.js"></script>
-      <title>Book Mania Login/Sign Up</title>
+        <?php require "../Extra/libraries.php" ?>
+
+        <link rel="stylesheet" href="../../CSS/Login.css?">
+        <script defer src="../../JS/FormLogin.js"></script>
+
+        <title>Book Mania Login/Sign Up</title>
    </head>
    <body>
         <div class="MainDiv">
@@ -26,7 +22,7 @@
             </div>
             <div class="tab-content" id="myTabContent">
                 <div class="FormDiv FormBody tab-pane fade" role="tabpanel" id="SignUp" aria-labelledby="SignUp-tab">
-                    <form class="form" action="./_SignUP.php" method="POST" id='sform'>
+                    <form class="form" action="../Extra/_SignUP.php" method="POST" id='sform'>
                         <?Php
                             if(isset($_GET['serror'])) {
                                 echo "<div class='form__item'>";
@@ -83,7 +79,7 @@
                     </form>
                 </div>
                 <div class="FormDiv FormBody tab-pane fade show active" role="tabpanel" id="Login" aria-labelledby="Login-tab">
-                    <form class="form" action="./_Login.php" method="POST" id='lform'>
+                    <form class="form" action="../Extra/_Login.php" method="POST" id='lform'>
                         <?Php
                             if(isset($_GET['lerror'])) {
                                 echo "<div class='form__item'>";

@@ -1,27 +1,27 @@
 <?Php 
     session_start();
 
-    require "./database.php";
+    require "../Extra/database.php";
+
+    if(!isset($_GET['id'])) {
+        $sql = "SELECT * FROM `item table`";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        $_GET['id'] = $row["ItemID"];
+    }
 
     $sql = "SELECT * FROM `item table` WHERE ItemID='" . $_GET['id'] . "'";
     $result = $conn->query($sql);
-    while($row = $result->fetch_assoc()) {
-        $item_image = $row["ItemImage"];
-        $item_name = $row["ItemName"];
-        $item_author = $row["ItemAuthor"];
-        $item_seller = $row["ItemSeller"];
-        $item_desc = $row["ItemDiscription"];
-        $item_price = $row["ItemPrice"];
-    }
+    $row = $result->fetch_assoc();
+    $item_image = $row["ItemImage"];
+    $item_name = $row["ItemName"];
+    $item_author = $row["ItemAuthor"];
+    $item_seller = $row["ItemSeller"];
+    $item_desc = $row["ItemDiscription"];
+    $item_price = $row["ItemPrice"];
+
 
     if(isset($_SESSION['userid'])) {
-        $sql = "SELECT * FROM `user table` WHERE UserID='". $_SESSION['userid'] ."'";
-        $usr_result = $conn->query($sql);
-
-        while($row = $usr_result->fetch_assoc()) {
-            $usr_name = $row['Username'];
-        }
-
         $sql = "SELECT * FROM `cart table` WHERE UserID='". $_SESSION['userid'] ."'AND ItemID='" . $_GET['id'] ."'";
         $cart_result = $conn->query($sql);
     }
@@ -30,13 +30,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script defer src="../Libraries/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="../Libraries/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="../CSS/ItemPage.css">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <?php require "../Extra/libraries.php" ?>
+
+        <link rel="stylesheet" href="../../CSS/ItemPage.css">
 
         <title>Book Mania "<?php echo $item_name; ?>"</title>
 
@@ -49,12 +45,12 @@
     </head>
     <body>
         <!-- Navbar -->
-        <?Php require "./NavBar.php"?>
+        <?Php require "../Extra/NavBar.php"?>
         <div class=FullScreen>
             <div class="ItemGrid">
                 <div class="Head dark_col display-6 font_style"><?php echo $item_name; ?></div>
                 <div class="Img dark_col">
-                    <img src=<?php echo "../" . $item_image?> alt=<?php echo $_GET['id']; ?> class="IMAGE">
+                    <img src=<?php echo "../../" . $item_image?> alt=<?php echo $_GET['id']; ?> class="IMAGE">
                 </div>
                 <div class="Desc dark_col">
                     <span class="Major dark_col font_style">
@@ -74,9 +70,8 @@
                                 Price: ₹<?php echo $item_price?>
                             </span>
                         </div>
-
                         <div class="col">
-                            <form action=<?php echo $cart_result->num_rows > 0 ? "\"\"" : (isset($usr_name) ? "\"./addtocart.php?id=". $_GET['id'] ."\"" : "\"./Login.php\""); ?> method="post">
+                            <form action=<?php echo $cart_result->num_rows > 0 ? "\"\"" : (isset($usr_name) ? "\"../Extra/addtocart.php?id=". $_GET['id'] ."\"" : "\"./Login.php\""); ?> method="post">
                                 <button class="button" type="submit">
                                     <?php 
                                         echo $cart_result->num_rows > 0 ? "Already in cart" : (isset($usr_name) ? "Add to Cart" : "Login");

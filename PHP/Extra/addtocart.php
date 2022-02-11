@@ -6,6 +6,6 @@
 
     $conn->query($sql);
 
-    header("Location: ./HomePage.php?type=ALL");
+    header("Location: ../Main/HomePage.php?type=ALL");
     exit();
 ?>
