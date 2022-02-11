@@ -71,10 +71,10 @@
                             </span>
                         </div>
                         <div class="col">
-                            <form action=<?php echo $cart_result->num_rows > 0 ? "\"\"" : (isset($usr_name) ? "\"../Extra/addtocart.php?id=". $_GET['id'] ."\"" : "\"./Login.php\""); ?> method="post">
+                            <form action=<?php echo isset($usr_name) ? ($cart_result->num_rows > 0 ? "\"\"" : "\"../Extra/addtocart.php?id=". $_GET['id'] ."\"" ) : "\"./Login.php\""; ?> method="post">
                                 <button class="button" type="submit">
                                     <?php 
-                                        echo $cart_result->num_rows > 0 ? "Already in cart" : (isset($usr_name) ? "Add to Cart" : "Login");
+                                        echo isset($usr_name) ? ($cart_result->num_rows > 0 ? "Already in cart" : "Add to Cart") : "Login";
                                     ?>
                                 </button>
                             </form>
