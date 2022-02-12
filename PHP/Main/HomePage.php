@@ -5,18 +5,18 @@
 
     if(isset($_GET['type'])) {
         if($_GET['type'] == 'ALL') {
-            $sql = "SELECT * FROM `item table`";
+            $sql = "SELECT * FROM `item table` ORDER BY ItemName";
         }
         else {
-            $sql = "SELECT * FROM `item table` WHERE `Type`='" . $_GET['type'] . "'";
+            $sql = "SELECT * FROM `item table` WHERE `Type`='" . $_GET['type'] . "' ORDER BY ItemName";
         }
     } 
     else {
         if(isset($_GET['search'])) {
-            $sql = "SELECT * FROM `item table` WHERE CONCAT_WS('', ItemName, ItemSeller, ItemAuthor, Type) LIKE REPLACE(\"%" . $_GET['search'] . "%\", ' ', '%')";
+            $sql = "SELECT * FROM `item table` WHERE CONCAT_WS('', ItemName, ItemSeller, ItemAuthor, Type) LIKE REPLACE(\"%" . $_GET['search'] . "%\", ' ', '%')  ORDER BY ItemName";
         } 
         else {
-            $sql = "SELECT * FROM `item table`";
+            $sql = "SELECT * FROM `item table` ORDER BY ItemName";
         }
     }
     $result = $conn->query($sql);

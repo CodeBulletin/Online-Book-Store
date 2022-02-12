@@ -1,0 +1,65 @@
+@import "UI.css";
+@import "NavBar.css";
+
+.Order_List {
+    padding: 25px;
+}
+
+.Order {
+    background-color: #212532;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    min-width: 200px;
+    
+    border-radius: 10px;
+    border-top: 2px solid #0D9737;
+    border-right: 2px solid #0D9737;
+    border-left: 2px solid #0D9737;
+    border-bottom: 2px solid #0D9737;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+
+    transition: 0.25s;
+}
+
+.Order:hover {
+    background-color: #252936;
+    padding: 20px;
+}
+
+.OrderID, .Price, .Date {
+    text-align: center;
+}
+
+.text {
+    vertical-align: middle;
+}
+
+@media only screen and (max-width: 975px) {
+    .OrderID {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    .Price {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    .Date {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+}
