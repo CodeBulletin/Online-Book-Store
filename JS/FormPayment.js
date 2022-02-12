@@ -189,7 +189,7 @@ cc_name.addEventListener('input', (event) => {
 
 form.addEventListener('submit', (event) => {
     var name = validateName(cc_name.value);
-    var number = cctype(cc_name.value.replaceAll("-", ""));
+    var number = (cctype(cc_name.value.replaceAll("-", "")) != null);
     var mm = cc_dateMM.value;
     var yyyy = cc_dateYYYY.value;
     var Date = validateExpiryDate(mm, yyyy) && (mm >= month && yyyy >= year);
