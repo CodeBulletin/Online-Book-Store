@@ -60,7 +60,7 @@
                         <li><a class="dropdown-item nav-link font_style" href="../Extra/Logout.php">Logout</a></li>
                         <li><a class="dropdown-item nav-link font_style" href="../Main/Cart.php"><?php echo $cart_text ?></a></li>
                         <li><a class="dropdown-item nav-link font_style" href="../Main/Orders.php">Orders</a></li>
-                        <li><a class="dropdown-item nav-link font_style" href="">Profile</a></li>
+                        <li><a class="dropdown-item nav-link font_style" href="../Main/Profile.php">Profile</a></li>
                     </ul>
                 </li>
             </ul>

@@ -46,6 +46,7 @@
     <body>
         <!-- Navbar -->
         <?Php require "../Extra/NavBar.php"?>
+        
         <div class=FullScreen>
             <div class="ItemGrid">
                 <div class="Head dark_col display-6 font_style"><?php echo $item_name; ?></div>

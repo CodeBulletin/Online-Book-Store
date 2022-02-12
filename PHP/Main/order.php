@@ -34,7 +34,9 @@
         <title>Book Mania Order</title>
     </head>
     <body>
+        <!-- Navbar -->
         <?php require "../Extra/NavBar.php"; ?>
+        
         <div class="FullScreen">
             <div class="CartGrid">
                 <?php if(isset($_GET['orderid'])  && $valid && $result->num_rows > 0):?>

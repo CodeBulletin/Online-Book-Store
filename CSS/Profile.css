@@ -1,0 +1,26 @@
+@import "UI.css";
+@import "NavBar.css";
+
+.ProfilePad {
+    padding: 25px;
+}
+
+.ProfileDiv {
+    background-color: #212532;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    min-width: 200px;
+    
+    border-radius: 10px;
+    border-top: 2px solid #0D9737;
+    border-right: 2px solid #0D9737;
+    border-left: 2px solid #0D9737;
+    border-bottom: 2px solid #0D9737;
+
+    text-align: center;
+
+    transition: 0.25s;
+}

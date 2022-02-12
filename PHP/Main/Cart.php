@@ -21,7 +21,9 @@
         <title>Book Mania Cart</title>
     </head>
     <body>
+        <!-- Navbar -->
         <?php require "../Extra/NavBar.php"; ?>
+        
         <div class="FullScreen">
             <div class="CartGrid">
                 <?php if($result->num_rows > 0):?>
