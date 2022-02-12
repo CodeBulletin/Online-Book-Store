@@ -189,14 +189,14 @@ cc_name.addEventListener('input', (event) => {
 
 form.addEventListener('submit', (event) => {
     var name = validateName(cc_name.value);
-    var number = (cctype(cc_name.value.replaceAll("-", "")) != null);
+    var cc_num = cc_number.value;
+    var number = (cctype(cc_num.replaceAll("-", "")) != null);
     var mm = cc_dateMM.value;
     var yyyy = cc_dateYYYY.value;
     var Date = validateExpiryDate(mm, yyyy) && (mm >= month && yyyy >= year);
     var cvv = validateCVV(cc_cvv.value);
 
     var a = name && number && Date && cvv;
-    console.log(name, number, Date, cvv, a);
 
     if (a == false) {
         event.preventDefault();
