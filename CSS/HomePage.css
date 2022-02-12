@@ -1,9 +1,11 @@
 @import "UI.css";
 @import "NavBar.css";
 
+.Item__List {
+    padding: 25px;
+}
+
 .Item {
-    display: flex;
-    flex-direction: column;
     background-color: #212532;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -17,6 +19,15 @@
     border-right: 2px solid #0D9737;
     border-left: 2px solid #0D9737;
     border-bottom: 2px solid #0D9737;
+
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    grid-auto-rows: auto;
+
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+
+    transition: 0.25s;
 }
 
 .Item:hover {
@@ -24,19 +35,41 @@
     padding: 20px;
 }
 
-.Item__Name {
+.img {
+    width: 100%;
+    height: auto;
+    min-width: 100px;
+    max-width: 250px;
+    
+    margin: auto;
+}
+
+.Name {
+    padding-left: 25px;
+}
+
+.name {
     font-size: 2em;
 }
 
-.Item__Price {
+.price {
     font-size: 1.1em;
 }
 
-.Item__div {
-    padding: 0;
-    margin: 0;
-}
-
-.Item__List {
-    padding: 25px;
+@media only screen and (max-width: 975px) {
+    .Image {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        text-align: center;
+    }
+    .Name {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        text-align: center;
+        padding-left: 0px;
+    }
 }

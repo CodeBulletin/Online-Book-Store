@@ -6,10 +6,9 @@
     $valid=true;
 
     if(isset($_GET['orderid'])) {
-        $sql = "SELECT * FROM `user-order` WHERE UserID=" . $_SESSION['userid'];
+        $sql = "SELECT * FROM `user-order` WHERE UserID=" . $_SESSION['userid'] ." AND OrderID=". $_GET['orderid'];
         $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-        if($_GET['orderid'] != $row['OrderID']) {
+        if($result->num_rows == 0) {
             $valid = false;
         }
         else {

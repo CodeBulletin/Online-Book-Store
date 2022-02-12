@@ -40,12 +40,14 @@
                 if($result->num_rows > 0):
                     while($row = $result->fetch_assoc()):
             ?>
-                        <a class="Link Item" href=<?php echo "./ItemPage.php?id=" . $row["ItemID"]; ?> >
-                            <div class="Item__div">
-                                <img style="display: inline-block; float: left; margin-right: 20px" alt=<?php echo $row["ItemID"]; ?> height="99px" src=<?php echo "../../" . $row["ItemImage"]; ?> />
-                                <div style="display: inline-block; padding: 0">
-                                    <span class="Item__Name font_style"><?php echo $row["ItemName"]?></span> <br>
-                                    <span class="Item__Price font_style">Price: ₹<?php echo $row["ItemPrice"]; ?></span> <br>
+                        <a class="Link" href=<?php echo "./ItemPage.php?id=" . $row["ItemID"]; ?> >
+                            <div class="Item">
+                                <div class="Image">
+                                    <img class="img" alt=<?php echo $row["ItemID"]; ?> height="99px" src=<?php echo "../../" . $row["ItemImage"]; ?> />
+                                </div>
+                                <div class="Name">
+                                    <span class="name font_style"><?php echo $row["ItemName"]?></span> <br>
+                                    <span class="price font_style">Price: ₹<?php echo $row["ItemPrice"]; ?></span> <br>
                                     <span class="font_style">Author: <?php echo $row["ItemAuthor"]; ?> | Seller: <?php echo $row["ItemSeller"]; ?></span>
                                 </div>
                             </div>
