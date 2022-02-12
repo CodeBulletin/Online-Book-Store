@@ -12,7 +12,7 @@
             }
         </style>
 
-        <meta http-equiv="refresh" content=<?php echo "3;url=./order.php?orderid=".$_GET['orderid']; ?> />
+        <meta http-equiv="refresh" content=<?php echo "3;url=./Order.php?orderid=".$_GET['orderid']; ?> />
 
         <title>Book Mania</title>
     </head>
