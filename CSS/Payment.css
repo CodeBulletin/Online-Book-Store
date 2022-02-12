@@ -1,0 +1,30 @@
+@import "UI.css";
+@import "Form.css";
+
+body {
+    padding: 25px;
+}
+
+.FormHead {
+    background-color: #212532 !important;
+    border: 2px solid #0fa942;
+}
+
+.Date {
+    width: 125px;
+    margin: auto;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
+.dateMM {
+    width: 50px;
+}
+
+.dateYY {
+    width: 75px;
+}
+
+.cvv {
+    width: 100px;
+}

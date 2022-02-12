@@ -1,0 +1,138 @@
+.FormDiv {
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-width: thin;
+    border-color: #242424;
+    background-color: #292929;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    min-width: 200px;
+    max-width: 525px;
+}
+
+.FormHead {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 0px;
+}
+
+.FormBody {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #212532;
+    border-bottom: 2px solid #0D9737;
+    border-right: 2px solid #0D9737;
+    border-left: 2px solid #0D9737;
+}
+
+.form {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+.form * {
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+.form__item {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.form__item > * {
+    align-self: flex-start;
+}
+
+.form__label {
+    font-weight: 600;
+    color: #F0F0F0;
+    padding: 5px 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form__message {
+    background-color: #FF000020;
+    color: #FF0000;
+    padding: 5px 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form__input {
+    -webkit-appearance: none;
+    width: 100%;
+    max-width: 425px;
+    min-height: 1.6em;
+    padding: 0.3em;
+    font-size: 1em;
+    font-family: sans-serif;
+    outline: none;
+    border: 1px solid #252732;
+    border-radius: 4px;
+    background: #202020;
+    transition: background 0.25s, border-color 0.25s, color 0.25s;
+    color: #F0F0F0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.form__input:focus {
+    background: #404040;
+}
+
+.form__input::placeholder {
+    color: #bbbbbb;
+    text-align: center;
+}
+
+.form__input--error {
+    color: #d50000;
+    background: #292121;
+    border-color: #d50000;
+}
+
+.form__input--error::placeholder {
+    color: #ffbfbf;
+}
+
+.form__error {
+    padding: 5px 0;
+    color: #d50000;
+    font-size: 0.9em;
+    display: none;
+    visibility: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form__input--error + .form__error {
+    visibility: visible;
+    display: flex;
+}
+
+.form__btn {
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 10px 16px;
+    margin: 10px auto;
+    color: #ffffff;
+    background: #14b64a;
+    border: 2px solid #0fa942;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+  
+.form__btn:active {
+    background: #0fa942;
+}
