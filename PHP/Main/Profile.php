@@ -25,16 +25,31 @@
     <body>
         <!-- Navbar -->
         <?php require "../Extra/NavBar.php"; ?>
-
-        <div class="ProfilePad">
-            <div class="ProfileDiv">
-                <span class="display-6 dark_col">User Full Name<br> <?php echo $user_fullname; ?></span><br>
-                <span class="display-6 dark_col">User Name<br> <?php echo $username; ?></span><br>
-                <span class="display-6 dark_col">User Email<br> <?php echo $useremail; ?></span><br>
-                <span class="display-6 dark_col">User Mobile no<br> <?php echo $userphone; ?></span><br>
-                <span class="display-6 dark_col">User Address<br> <?php echo $useraddr; ?></span>
+        <diV class="MainDiv">
+            <div class="FormDiv FormHead dark_col display-6" style="text-align: center;">
+                <?php echo $username; ?>
             </div>
-        </div>
+            <div class="FormDiv FormBody">
+                <form class="form">
+                    <div class="form__item">
+                        <label for="name" class="form__label">Full name</label>
+                        <input type="text" class="form__input" value=<?php echo "\"$user_fullname\"";?> disabled>
+                    </div>
+                    <div class="form__item">
+                        <label for="name" class="form__label">Email</label>
+                        <input type="email" class="form__input" value=<?php echo "\"$useremail\"";?> disabled>
+                    </div>
+                    <div class="form__item">
+                        <label for="name" class="form__label">Phone Number</label>
+                        <input type="text" class="form__input" value=<?php echo "\"$userphone\"";?> disabled>
+                    </div>
+                    <div class="form__item">
+                        <label for="name" class="form__label">Address</label>
+                        <textarea class="form__input"cols="15" rows="5" disabled><?php echo "$useraddr";?></textarea>
+                    </div>
+                </form>
+            </div>
+        </diV>
     </body>
 </html>
 
