@@ -95,6 +95,17 @@ ALTER TABLE `user-order`
 ALTER TABLE `user table`
   ADD PRIMARY KEY (`UserID`);
 
+-- Auto Increment
+
+ALTER TABLE `item table`
+  MODIFY `ItemID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15024;
+  
+ALTER TABLE `order table`
+  MODIFY `OrderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30121;
+
+ALTER TABLE `user table`
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1733;
+
 -- ITEM TABLE DATA
 
 INSERT INTO `item table` (`ItemID`, `ItemName`, `ItemPrice`, `ItemAuthor`, `ItemSeller`, `ItemDiscription`, `ItemImage`, `Type`) VALUES
