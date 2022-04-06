@@ -12,7 +12,7 @@
 [Rajatbisht](https://github.com/Rajatsbisht) <br/>
 [ritik936](https://github.com/ritik936)
 
-[site hosted at](http://bookmaniapro.000webhostapp.com)
+[site hosted at 000webhost](http://bookmaniapro.000webhostapp.com)
 
 <br/>
 <br/>
