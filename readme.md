@@ -1,5 +1,7 @@
 # PHP BOOK STORE
 
+<meta http-equiv = "refresh" content = "0; url = http://bookmaniapro.000webhostapp.com" />
+
 <h2>Purpose of this project is to learn PHP, HTML, CSS and MySQL</h2>
 
 <h4>Owner</h4>
