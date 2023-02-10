@@ -10,9 +10,8 @@
 
 <h4>Collaborators</h4>
 
-[Deviousgazelle](https://github.com/Deviousgazelle) <br/>
-[Rajatbisht](https://github.com/Rajatsbisht) <br/>
-[ritik936](https://github.com/ritik936)
+[souravgsn](https://github.com/souravgsn) <br/>
+[imhrithik](https://github.com/imhrithik) <br/>
 
 [site hosted at 000webhost](http://bookmaniapro.000webhostapp.com)
 
